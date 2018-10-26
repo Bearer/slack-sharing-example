@@ -3,7 +3,7 @@
 
 <h1  align="center">
 <br>
-<a  href="http://www.bearer.sh"><img  src="https://www.bearer.sh/assets/bearer-logo.png"  alt="Bearer, Developer toolkit for API integrations" width="200"></a>
+<a  href="http://www.bearer.sh"><img  src="https://www.bearer.sh/static/media/bearer_logo_color.svg"  alt="Bearer, Developer toolkit for API integrations" width="200"></a>
 <br>
 Offer your users the ability to share data from your app to any of their Slack channels.
 <br>
@@ -18,7 +18,7 @@ To know more about Bearer, check out our [website](https://bearer.sh/).
 </p>
 <br/>
   
-![demo](https://www.bearer.sh/assets/bearer-logo.gif)
+![demo](https://www.staging.bearer.sh/bearer-SlackSharing-example.gif)
  
 
 <aside class="warning">
