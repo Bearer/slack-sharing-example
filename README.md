@@ -1,6 +1,6 @@
 <h1  align="center">
 <br>
-<a  href="http://www.bearer.sh"><img  src="https://www.bearer.sh/static/media/bearer_logo_color.svg"  alt="Bearer, Developer toolkit for API integrations" width="200"></a>
+<a href="http://www.bearer.sh"><img src="https://www.bearer.sh/static/media/bearer_logo_color.svg" alt="Bearer, Developer toolkit for API integrations" width="200"></a>
 <br>
 Add Slack Notification to your App in 5min!
 <br>
@@ -11,7 +11,7 @@ A scenario is equivalent to an API integration in Bearer lingo.
 To know more about Bearer, check out our [website](https://bearer.sh/).
 
 <p  align="center">
-<a  href=""  style="padding:16px; border-radius:4px;background: linear-gradient(45deg, #F4C503 0%, #F1B71D 100%, #FFC123 100%);color:white;font-family: 'Proxima Nova';line-height:19px;font-size:16px"  target="_blank">Try it live</a>
+<a  href="" style="padding:16px; border-radius:4px;background: linear-gradient(45deg, #F4C503 0%, #F1B71D 100%, #FFC123 100%);color:white;font-family: 'Proxima Nova';line-height:19px;font-size:16px"  target="_blank">Try it live</a>
 </p>
 <br/>
 
