@@ -17,9 +17,9 @@ To know more about Bearer, check out our [website](https://bearer.sh/).
 <a  href=""  style="padding:16px; border-radius:4px;background: linear-gradient(45deg, #F4C503 0%, #F1B71D 100%, #FFC123 100%);color:white;font-family: 'Proxima Nova';line-height:19px;font-size:16px"  target="_blank">Try it live</a>
 </p>
 <br/>
-  
+<p  align="center">
 ![demo](https://www.staging.bearer.sh/bearer-SlackSharing-example.gif)
- 
+</p> 
 
 <aside class="warning">
 Bearer is still private beta, please contact us to claim your API key.<br/>
