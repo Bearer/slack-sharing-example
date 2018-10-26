@@ -15,9 +15,7 @@ To know more about Bearer, check out our [website](https://bearer.sh/).
 </p>
 <br/>
 
-<p  align="center">
-  ![demo](https://www.staging.bearer.sh/bearer-SlackSharing-example.gif)
-</p>
+![demo](https://www.staging.bearer.sh/bearer-SlackSharing-example.gif)
 
 You have to follow those steps to fork and deploy this Scenario:
 
