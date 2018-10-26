@@ -1,11 +1,8 @@
-
-  
-
 <h1  align="center">
 <br>
 <a  href="http://www.bearer.sh"><img  src="https://www.bearer.sh/static/media/bearer_logo_color.svg"  alt="Bearer, Developer toolkit for API integrations" width="200"></a>
 <br>
-Offer your users the ability to share data from your app to any of their Slack channels.
+Add Slack Notification to your App in 5min!
 <br>
 </h1>
 
@@ -18,44 +15,30 @@ To know more about Bearer, check out our [website](https://bearer.sh/).
 </p>
 <br/>
 
-![demo](https://www.staging.bearer.sh/bearer-SlackSharing-example.gif)
+<p  align="center">
+  ![demo](https://www.staging.bearer.sh/bearer-SlackSharing-example.gif)
+</p>
 
-<aside class="warning">
-Bearer is still private beta, please contact us to claim your API key.<br/>
-<a href="http://www.bearer.sh/integrations/slack?utm_content=key">Ask for a key</a>
-</aside>  
+You have to follow those steps to fork and deploy this Scenario:
 
-You have to follow four steps to fulfill this Scenario:
+- Step 1: create an account on Bearer Developer Portal
+- Step 2: To run locally: install Bearer CLI [Installation tutorial](https://docs.bearer.sh/docs/installation)
+- Step 3: Deploy your code to Bearer [Deploying tutorial](https://docs.bearer.sh/docs/deploying)
 
-- Step 1 : create an account on Bearer Developer Portal
-- Step 2 : To run on local : install Bearer CLI [Installation tutorial](https://docs.bearer.sh/docs/installation)
-- Step 3 : Copy the JS and Web Components, customize them as needed for your brand. You can also use the API endpoint for automation.
-- Step 4 : Deploy your code to Bearer Developer Portal [Deploying tutorial](https://docs.bearer.sh/docs/deploying)
-
-
-The Developer Portal has a dashboard offering an overview of your Components.
-You can copy/paste them anywhere you want!
- 
-
-Join our Slack community to receive amazing support! 💪
+Join our <a href="http://slackin-bearer-community.herokuapp.com">Slack Community</a> if you need help or have questions 🙏 
 
 ## Features
 
-Here are the main features that this project offers you:
+Here are the main features that this Integration provides:
 
-* Web Components to select a Slack channel, with lean and minimalist design
-* API endpoint available for automation
-* Control the domains you want to use it
-* Authentication process ready and managed
+* Web Components to select Setup OAuth credentials, select Slack channel and more
+* API endpoint available to automate sending notification from your backend
+* OAuth Authentication flow taken care for you - no need to store or deal with tokens
 * Agnostic: use the language you want
-* Open-Sourced: Fork and modify at will
+* Open-Source: Fork and modify at will
 
-If you'd like to contribute, please fork the repository and use a feature
-branch.
-
-Pull requests are warmly welcome.
-
-  
+If you'd like to contribute, please fork the repository, use a feature
+branch. Pull requests are warmly welcome.
 
 ## Licence
 
