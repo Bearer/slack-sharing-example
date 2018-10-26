@@ -9,16 +9,6 @@ Offer your users the ability to share data from your app to any of their Slack c
 <br>
 </h1>
 
-<p  align="center">
-
-[![GitHub issues](https://img.shields.io/github/issues/Bearer/examples.svg?style=for-the-badge)](https://github.com/Bearer/examples/issues)
-[![GitHub forks](https://img.shields.io/github/forks/Bearer/examples.svg?style=for-the-badge)](https://github.com/Bearer/examples/network)
-[![GitHub stars](https://img.shields.io/github/stars/Bearer/examples.svg?style=for-the-badge)](https://github.com/Bearer/examples/stargazers)
-[![GitHub license](https://img.shields.io/github/license/Bearer/examples.svg?style=for-the-badge)](https://github.com/Bearer/examples)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/Bearer/examples.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2FBearer%2Fexamples)
-
-</p>
-
 This project is a Bearer Scenario implementing Slack messaging API.
 A scenario is equivalent to an API integration in Bearer lingo.
 To know more about Bearer, check out our [website](https://bearer.sh/).
