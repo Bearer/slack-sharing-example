@@ -1,6 +1,6 @@
 <p align="center">
 <br>
-<a href="http://www.bearer.sh"  align="center"><img src="https://www.staging.bearer.sh/bearer_logo_color.png" alt="Bearer, Developer toolkit for API integrations" width="200"></a>
+<a href="http://www.bearer.sh"  align="center"><img src="https://www.staging.bearer.sh/bearer_logo_color.png" alt="Bearer, Developer toolkit for API integrations" width="300"></a>
 <br><br>
 <h1 align="center">Add Slack Notification to your App in 5min! </h1>
 <br>
@@ -9,7 +9,7 @@
 <p align="center">
 This project is a Bearer Scenario implementing Slack messaging API.
 A scenario is equivalent to an API integration in Bearer lingo.
-To know more about Bearer, check out our [website](https://bearer.sh/).
+To know more about Bearer, check out our https://bearer.sh/.
 </p>
 <br>
 <p  align="center">
