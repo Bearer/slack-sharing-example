@@ -1,23 +1,29 @@
-<h1  align="center">
+<p align="center">
 <br>
-<a href="http://www.bearer.sh"><img src="https://www.bearer.sh/static/media/bearer_logo_color.svg" alt="Bearer, Developer toolkit for API integrations" width="200"></a>
+<a href="http://www.bearer.sh"  align="center"><img src="https://www.staging.bearer.sh/bearer_logo_color.png
+https://www.staging.bearer.sh/bearer_logo_color.png" alt="Bearer, Developer toolkit for API integrations" width="200"></a>
+<br><br>
+<h1 align="center">Add Slack Notification to your App in 5min! </h1>
 <br>
-Add Slack Notification to your App in 5min!
-<br>
-</h1>
+</p>
 
+<p align="center">
 This project is a Bearer Scenario implementing Slack messaging API.
 A scenario is equivalent to an API integration in Bearer lingo.
 To know more about Bearer, check out our [website](https://bearer.sh/).
+</p>
 
 <p  align="center">
-<a  href="https://www.bearer.sh/integrations/slack/" style="padding:16px; border-radius:4px;background: linear-gradient(45deg, #F4C503 0%, #F1B71D 100%, #FFC123 100%);color:white;font-family: 'Proxima Nova';line-height:19px;font-size:16px"  target="_blank">Try it live</a>
+<a  href="https://www.bearer.sh/integrations/slack/" style="display:inline-block; padding:16px; border-radius:4px;background: linear-gradient(45deg, #F4C503 0%, #F1B71D 100%, #FFC123 100%);color:white;font-family: 'Proxima Nova';line-height:19px;font-size:16px"  target="_blank"><img src="https://www.staging.bearer.sh/try-it-live.png
+https://www.staging.bearer.sh/try-it-live.png"/></a>
 </p>
-<br/>
+<br>
 
-![demo](https://www.staging.bearer.sh/bearer-SlackSharing-example.gif)
-
+<p  align="center">
+  <img src="https://www.staging.bearer.sh/bearer-SlackSharing-example.gif"/>
+  <br><br>
 You have to follow those steps to fork and deploy this Scenario:
+</p>
 
 - Step 1: create an account on Bearer Developer Portal
 - Step 2: To run locally: install Bearer CLI [Installation tutorial](https://docs.bearer.sh/docs/installation)
