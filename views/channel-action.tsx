@@ -3,9 +3,8 @@
 
 */
 
-import Bearer, {
+import {
   Prop,
-  Events,
   Element,
   RootComponent,
   Intent,
@@ -13,9 +12,11 @@ import Bearer, {
   State,
   BearerFetch,
   Event,
-  EventEmitter
+  EventEmitter,
+  Listen
 } from '@bearer/core'
 import '@bearer/ui'
+import Search from './components/IconSearch'
 import { TChannel, TSavedChannelPayload } from './types'
 
 @RootComponent({
@@ -25,6 +26,7 @@ import { TChannel, TSavedChannelPayload } from './types'
 export class ChannelAction {
   @Intent('saveChannel', IntentType.SaveState)
   saveChannel: BearerFetch
+
   @Intent('ListChannel')
   listChannel: BearerFetch
 
@@ -35,10 +37,13 @@ export class ChannelAction {
   channel: TChannel
   @State()
   channels: Array<TChannel> = []
+
   @State()
   suggestions: Array<TChannel> = []
+
   @State()
   loading: boolean = true
+
   @State()
   fetchingChannels: boolean = false
   @State()
@@ -59,10 +64,17 @@ export class ChannelAction {
   saved: EventEmitter<TSavedChannelPayload>
 
   componentDidLoad() {
-    Bearer.emitter.addListener(Events.AUTHORIZED, ({ data }) => {
-      this.authId = data.authId
-      this.notify({ name: 'authId', value: this.authId })
+    document.addEventListener('click', () => {
+      this.editMode = false
+      console.log('ok')
     })
+  }
+
+  @Listen('body:connect:authorized')
+  handler(event) {
+    this.authId = event.detail.authId
+    this.suggestions = []
+    this.notify({ name: 'authId', value: this.authId })
   }
 
   notify = params => {
@@ -116,10 +128,11 @@ export class ChannelAction {
   }
 
   onInputFocused = () => {
+    this.editMode = true
     if (!Boolean(this.suggestions.length)) {
       this.fetchingChannels = true
       this.listChannel()
-        .then(({ data }) => {
+        .then(({ data }: { data: Array<{ id: string; name: string; is_private: boolean }> }) => {
           this.suggestions = this.channels = data
         })
         .catch(console.error)
@@ -135,14 +148,24 @@ export class ChannelAction {
     this.selected = 0
   }
 
+  onClick = (event: Event) => {
+    event.stopImmediatePropagation()
+  }
+
   render() {
     if (this.channel && !this.editMode) {
-      return <selected-channel channel={this.channel} onEditClick={this.toggleEdit} />
-    } else {
       return (
-        <div class="channel-root">
+        <div onClick={this.onClick}>
+          <selected-channel channel={this.channel} onEditClick={this.toggleEdit} />
+        </div>
+      )
+    } else {
+      const hasSuggestions = Boolean(this.suggestions.length)
+      const showContainer = this.editMode && (hasSuggestions || this.fetchingChannels)
+      return (
+        <div class="channel-root" onClick={this.onClick}>
           <div>
-            <label class="search-icon" htmlFor="input" />
+            <Search className="search-icon" />
             <input
               autocomplete="off"
               id="input"
@@ -152,26 +175,30 @@ export class ChannelAction {
               onFocus={this.onInputFocused}
               onKeyDown={this.onKeyPress}
             />
-            {this.fetchingChannels && <bearer-loading />}
           </div>
-          {!this.fetchingChannels &&
-            Boolean(this.suggestions.length) && (
-              <ul>
-                {this.suggestions.map((c, index) => (
-                  <li
-                    class={this.selected === index ? 'selected' : ''}
-                    onClick={() => {
-                      this.attachChannel(c)
-                    }}
-                    onMouseEnter={this.onFocus(index)}
-                  >
-                    {c.is_private ? <channel-lock /> : '#'}
-                    {c.name}
-                    <button onFocus={this.onFocus(index)}>Select</button>
-                  </li>
-                ))}
-              </ul>
-            )}
+          {showContainer && (
+            <div class="suggestion-container">
+              {this.fetchingChannels && <bearer-loading />}
+              {!this.fetchingChannels &&
+                hasSuggestions && (
+                  <ul>
+                    {this.suggestions.map((c, index) => (
+                      <li
+                        class={this.selected === index ? 'selected' : ''}
+                        onClick={() => {
+                          this.attachChannel(c)
+                        }}
+                        onMouseEnter={this.onFocus(index)}
+                      >
+                        {c.is_private ? <channel-lock /> : '#'}
+                        {c.name}
+                        <button onFocus={this.onFocus(index)}>Select</button>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+            </div>
+          )}
         </div>
       )
     }

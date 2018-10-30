@@ -48,7 +48,3 @@ branch. Pull requests are warmly welcome.
 ## Licence
 
 MIT
-
-  
-
----
