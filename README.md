@@ -1,6 +1,6 @@
 <p align="center">
 <br>
-<a href="http://www.bearer.sh"  align="center"><img src="https://www.staging.bearer.sh/bearer_logo_color.png" alt="Bearer, Developer toolkit for API integrations" width="300"></a>
+<a href="http://www.bearer.sh"  align="center"><img src="https://www.bearer.sh/bearer_logo_color.png" alt="Bearer, Developer toolkit for API integrations" width="300"></a>
 <br><br>
 <h1 align="center">Add Slack Notification to your App in 5min! </h1>
 <br>
@@ -13,14 +13,14 @@ To know more about Bearer, check out our https://bearer.sh/.
 </p>
 <br>
 <p  align="center">
-<a  href="https://www.bearer.sh/integrations/slack/" target="_blank"><img width="120px"  height="53px" src="https://www.staging.bearer.sh/try-it-live.png"/></a>
+<a  href="https://www.bearer.sh/integrations/slack/" target="_blank"><img width="120px"  height="53px" src="https://www.bearer.sh/try-it-live.png"/></a>
 </p>
 <br>
 <br>
 <br>
 
 <p  align="center">
-  <img src="https://www.staging.bearer.sh/bearer-SlackSharing-example.gif"/>
+  <img src="https://www.bearer.sh/bearer-SlackSharing-example.gif"/>
 </p>
 
 <br><br>
