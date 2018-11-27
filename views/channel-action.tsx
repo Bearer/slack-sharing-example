@@ -1,40 +1,22 @@
-/*
-  The purpose of this component is to deal with scenario navigation between each views.
-
-*/
-
-import {
-  Prop,
-  Element,
-  RootComponent,
-  Intent,
-  IntentType,
-  State,
-  BearerFetch,
-  Event,
-  EventEmitter,
-  Listen
-} from '@bearer/core'
+import { Prop, Element, RootComponent, Intent, State, BearerFetch, Listen, Output, BearerRef } from '@bearer/core'
 import '@bearer/ui'
+
+import fuzzysearch from './fuzzy'
 import Search from './components/IconSearch'
-import { TChannel, TSavedChannelPayload } from './types'
+import { TChannel } from './types'
 
 @RootComponent({
   role: 'action',
   group: 'channel'
 })
 export class ChannelAction {
-  @Intent('saveChannel', IntentType.SaveState)
-  saveChannel: BearerFetch
-
+  @Output() channel: BearerRef<TChannel>
   @Intent('ListChannel')
   listChannel: BearerFetch
 
   @Prop({ mutable: true })
   authId: string
 
-  @State()
-  channel: TChannel
   @State()
   channels: Array<TChannel> = []
 
@@ -57,16 +39,9 @@ export class ChannelAction {
   @Element()
   el: HTMLElement
 
-  @Event()
-  propSet: EventEmitter
-
-  @Event()
-  saved: EventEmitter<TSavedChannelPayload>
-
   componentDidLoad() {
     document.addEventListener('click', () => {
       this.editMode = false
-      console.log('ok')
     })
   }
 
@@ -74,26 +49,12 @@ export class ChannelAction {
   handler(event) {
     this.authId = event.detail.authId
     this.suggestions = []
-    this.notify({ name: 'authId', value: this.authId })
-  }
-
-  notify = params => {
-    this.propSet.emit(params)
   }
 
   attachChannel = (channel: TChannel): void => {
     this.editMode = false
     this.channel = channel
-    this.saveChannel({ authId: this.authId, body: { channel } })
-      .then(({ data, referenceId }) => {
-        this.saved.emit({ channelId: referenceId, channel: data.channel })
-      })
-      .catch(error => {
-        throw error
-      })
-      .then(() => {
-        this.selected = null
-      })
+    this.selected = null
   }
 
   toggleEdit = () => {
@@ -203,26 +164,4 @@ export class ChannelAction {
       )
     }
   }
-}
-
-// Source : https://github.com/bevacqua/fuzzysearch/blob/master/index.js
-function fuzzysearch(needle, haystack) {
-  var hlen = haystack.length
-  var nlen = needle.length
-  if (nlen > hlen) {
-    return false
-  }
-  if (nlen === hlen) {
-    return needle === haystack
-  }
-  outer: for (var i = 0, j = 0; i < nlen; i++) {
-    var nch = needle.charCodeAt(i)
-    while (j < hlen) {
-      if (haystack.charCodeAt(j++) === nch) {
-        continue outer
-      }
-    }
-    return false
-  }
-  return true
 }
