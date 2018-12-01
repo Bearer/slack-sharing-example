@@ -1,4 +1,4 @@
-import { Prop, Element, RootComponent, Intent, State, BearerFetch, Listen, Output, BearerRef } from '@bearer/core'
+import { Prop, Element, RootComponent, Intent, State, BearerFetch, Listen, Output } from '@bearer/core'
 import '@bearer/ui'
 
 import fuzzysearch from './fuzzy'
@@ -10,7 +10,7 @@ import { TChannel } from './types'
   group: 'channel'
 })
 export class ChannelAction {
-  @Output() channel: BearerRef<TChannel>
+  @Output() channel: TChannel
   @Intent('ListChannel')
   listChannel: BearerFetch
 

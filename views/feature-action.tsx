@@ -7,8 +7,7 @@ import Bearer, {
   Intent,
   BearerFetch,
   State,
-  Input,
-  BearerRef
+  Input
 } from '@bearer/core'
 import '@bearer/ui'
 
@@ -19,7 +18,7 @@ import { TChannel } from './types'
   group: 'feature'
 })
 export class FeatureAction {
-  @Input({ autoLoad: false, group: 'channel' }) channel: BearerRef<TChannel>
+  @Input({ autoLoad: false, group: 'channel' }) channel: TChannel
 
   @Intent('Share')
   fetcher: BearerFetch
