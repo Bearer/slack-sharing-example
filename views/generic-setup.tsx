@@ -19,9 +19,8 @@ type TSetupPayload = {
   Item: { referenceId: string };
 };
 
-@RootComponent({
-  role: "action",
-  group: "generic"
+@Component({
+  tag: "generic-action"
 })
 export class GenericSetup {
   @Prop()
