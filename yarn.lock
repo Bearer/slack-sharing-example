@@ -18,14 +18,14 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@bearer/bearer-cli@^0.74.1":
-  version "0.74.1"
-  resolved "https://registry.yarnpkg.com/@bearer/bearer-cli/-/bearer-cli-0.74.1.tgz#f90abc08dc8a049e4f9ab04ce6c0f22184344a5e"
-  integrity sha512-66M88ZFnPfP4koEhxsGPJ84F+5aqq8w/nZrJ1J9Y5Ccjx5XM7bCJs3VtQeFHLpCACL5X2RzwQU532C9kDpTIZA==
+"@bearer/bearer-cli@^0.74.2":
+  version "0.74.2"
+  resolved "https://registry.yarnpkg.com/@bearer/bearer-cli/-/bearer-cli-0.74.2.tgz#cfdd0882143ca4c168749b394180e8c90b192bbd"
+  integrity sha512-iJbRE+4y9SAebDwZ9rkZPMWtn385abv5/KuO+5ePHxj+74uKiW50b5KewH/0GMXjzn9yeggZ124rdKpW5haNDw==
   dependencies:
     "@bearer/intents" "^0.74.0"
     "@bearer/templates" "^0.74.0"
-    "@bearer/transpiler" "^0.74.1"
+    "@bearer/transpiler" "^0.74.2"
     "@bearer/types" "^0.74.0"
     "@koa/cors" "^2.2.2"
     amazon-cognito-identity-js "^2.0.3"
@@ -71,15 +71,15 @@
     uuid "^3.3.2"
     webpack "^4.12.0"
 
-"@bearer/cli@0.74.1":
-  version "0.74.1"
-  resolved "https://registry.yarnpkg.com/@bearer/cli/-/cli-0.74.1.tgz#355780f32dd5d4a78eb86823f7673447c9323966"
-  integrity sha512-5aUoeJ/N1RreNsJBgkmMvYpEZbO0N+x++3oS1iSTYAzRNKvhiKXaAmOwk/ii8CYQWZuAcAhv2thO8dn6zuF8UQ==
+"@bearer/cli@next":
+  version "0.74.2"
+  resolved "https://registry.yarnpkg.com/@bearer/cli/-/cli-0.74.2.tgz#80af8888ce8165c557f2bd2b5b55bdf741a20b17"
+  integrity sha512-5G5ZYWYhh31JDfVaY3/MeaG956JvQ+S3Hzv89raT0PKP39Hw71xBupEp2wkCl9WbO/sIEQfSq4H2KhTV3ABgRQ==
   dependencies:
-    "@bearer/bearer-cli" "^0.74.1"
+    "@bearer/bearer-cli" "^0.74.2"
     "@bearer/intents" "^0.74.0"
     "@bearer/templates" "^0.74.0"
-    "@bearer/transpiler" "^0.74.1"
+    "@bearer/transpiler" "^0.74.2"
     "@bearer/types" "^0.74.0"
     "@oclif/command" "^1.5.2"
     "@oclif/config" "^1.8.6"
@@ -142,10 +142,10 @@
     "@bearer/types" "^0.74.0"
     typescript "^2.9.2"
 
-"@bearer/transpiler@^0.74.1":
-  version "0.74.1"
-  resolved "https://registry.yarnpkg.com/@bearer/transpiler/-/transpiler-0.74.1.tgz#75d351f0df44d0e6ea4accbfa03e3b4dfeedb813"
-  integrity sha512-U7mKIPulopPdoKQ3PMyYIe1QrTvZf85tFLEXSPjJUv5K4RfxHNTCjw/jcI5eFqC8vkyK3hZcxCwTaqy5jMwisw==
+"@bearer/transpiler@^0.74.2":
+  version "0.74.2"
+  resolved "https://registry.yarnpkg.com/@bearer/transpiler/-/transpiler-0.74.2.tgz#2f993cc538e2708e9f96a569a8c5b99fd01d7992"
+  integrity sha512-A9U871PpB1IabvkEVVU/CP0euqYxmn67hMdpTeJGbi+S9/YnNtOm6wV/M5whTMEl/ro29xiTC/r01gZXBfu8bQ==
   dependencies:
     async-foreach "^0.1.3"
     case "^1.5.5"
