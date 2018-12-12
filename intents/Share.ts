@@ -2,6 +2,7 @@ import { FetchData, TOAUTH2AuthContext, TFetchDataCallback } from '@bearer/inten
 import Client from './client'
 
 type TShareParams = {
+  authId: string
   channelId: string
 }
 
@@ -13,17 +14,19 @@ type TShareContext = {
 
 type TShareBody = {
   message: string
-  channel: {
-    id: string
-  }
 }
 
 export default class ShareIntent {
   static intentName: string = 'Share'
   static intentType: any = FetchData
 
-  static action(context: TOAUTH2AuthContext & TShareContext, _params: TShareParams, body: TShareBody, callback: TFetchDataCallback) {
-    const channel = context.channel || body.channel
+  static action(
+    context: TOAUTH2AuthContext & TShareContext,
+    _params: TShareParams,
+    body: TShareBody,
+    callback: TFetchDataCallback
+  ) {
+    const channel = context.channel
     try {
       if (!channel) {
         throw new MissingChannel()

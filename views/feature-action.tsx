@@ -7,55 +7,47 @@ import Bearer, {
   Intent,
   BearerFetch,
   State,
-  Listen
+  Input
 } from '@bearer/core'
 import '@bearer/ui'
-import { TSavedChannelPayload } from './types'
+
+import { TChannel } from './types'
+
 @RootComponent({
   role: 'action',
   group: 'feature'
 })
 export class FeatureAction {
+  @Input({ autoLoad: false, group: 'channel' }) channel: TChannel
+
   @Intent('Share')
   fetcher: BearerFetch
+
   @Prop({ mutable: true })
   authId: string
-  @Prop({ mutable: true })
-  channelId: string
+
   @Prop()
   text: string = 'Share on slack'
+
   @Prop()
   message: string = 'Hey, this is Bearer.sh reaching out 🐻'
+
   @State()
   loading: boolean = false
+
   @State()
   error: boolean = false
+
   @State()
   hasShared: boolean = false
-  @Event()
-  propSet: EventEmitter
+
   @Event()
   shared: EventEmitter
-
-  @Listen('body:channel:saved')
-  savedChannelHandler(event: { detail: TSavedChannelPayload }) {
-    if (this.channelId !== event.detail.channelId) {
-      this.hasShared = false
-    }
-    this.channelId = event.detail.channelId
-    // dev portal specific code
-    this.notify({ name: 'channelId', value: this.channelId })
-  }
 
   componentDidLoad() {
     Bearer.emitter.addListener(Events.AUTHORIZED, ({ data }) => {
       this.authId = data.authId
-      this.notify({ name: 'authId', value: this.authId })
     })
-  }
-
-  notify = params => {
-    this.propSet.emit(params)
   }
 
   perform = () => {
@@ -66,7 +58,7 @@ export class FeatureAction {
     this.error = false
     this.fetcher({
       authId: this.authId,
-      channelId: this.channelId,
+      channelId: (this as any).channelRefId,
       body: { message: this.message }
     })
       .then(({ data }) => {
