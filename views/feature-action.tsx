@@ -1,7 +1,6 @@
-import Bearer, {
+import {
   RootComponent,
   Prop,
-  Events,
   Event,
   EventEmitter,
   Intent,
@@ -17,14 +16,18 @@ import { TChannel } from './types'
   role: 'action',
   group: 'feature'
 })
+
 export class FeatureAction {
   @Input({ autoLoad: false, group: 'channel' }) channel: TChannel
 
   @Intent('Share')
   fetcher: BearerFetch
 
-  @Prop({ mutable: true })
+  @Prop()
   authId: string
+
+  @Prop()
+  channelId: string
 
   @Prop()
   text: string = 'Share on slack'
@@ -43,12 +46,6 @@ export class FeatureAction {
 
   @Event()
   shared: EventEmitter
-
-  componentDidLoad() {
-    Bearer.emitter.addListener(Events.AUTHORIZED, ({ data }) => {
-      this.authId = data.authId
-    })
-  }
 
   perform = () => {
     if (this.hasShared) {

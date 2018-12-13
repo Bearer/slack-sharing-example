@@ -20,7 +20,7 @@
             </a>
             <div class="d-flex order-lg-2 ml-auto">
             </div>
-          </div>
+         </div>
         </div>
       </div>
       <div class="my-3 my-md-5">
@@ -68,30 +68,14 @@
                   </connect-display>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-title">Action</h2>
-                </div>
-                <div class="card-body">
-                  <connect-action setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
-                  </connect-action>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <h1 class="card-title">Select channel</h1>
-            </div>
-            <div class="card-body">
               <div class="card">
                 <div class="card-header">
                   <h2 class="card-title">Action</h2>
                 </div>
                 <div class="card-body">
-                  <channel-action>
-                  </channel-action>
+                  <connect-action auth-id="something-else" setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
+                  </connect-action>
                 </div>
               </div>
             </div>
@@ -108,11 +92,11 @@
                 </div>
                 <div class="card-body row">
                   <div class="col">
-                    <channel-action>
+                    <channel-action channel-ref-id="hello-world" auth-id="something-else">
                     </channel-action>
                   </div>
                   <div class="col">
-                    <feature-action setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
+                    <feature-action channel-ref-id="hello-world" auth-id="something-else" setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
                     </feature-action>
                   </div>
                 </div>

@@ -1,4 +1,4 @@
-import { Prop, Element, RootComponent, Intent, State, BearerFetch, Listen, Output } from '@bearer/core'
+import { Prop, Element, RootComponent, Intent, State, BearerFetch, Output } from '@bearer/core'
 import '@bearer/ui'
 
 import fuzzysearch from './fuzzy'
@@ -11,11 +11,21 @@ import { TChannel } from './types'
 })
 export class ChannelAction {
   @Output() channel: TChannel
+
   @Intent('ListChannel')
   listChannel: BearerFetch
 
-  @Prop({ mutable: true })
+  @Intent("retrieveChannel")
+  fetcherRetrieveChannel: BearerFetch
+
+  @State()
+  initialChannel: TChannel
+
+  @Prop()
   authId: string
+
+  @Prop()
+  channelId: string
 
   @State()
   channels: Array<TChannel> = []
@@ -28,8 +38,10 @@ export class ChannelAction {
 
   @State()
   fetchingChannels: boolean = false
+
   @State()
   editMode: boolean = false
+
   @State()
   selected: number = null
 
@@ -39,16 +51,20 @@ export class ChannelAction {
   @Element()
   el: HTMLElement
 
+  _loadChannel = () => {
+    this.fetcherRetrieveChannel({ referenceId: (this as any).channelRefId }).then(({ data }: {
+      data: TChannel;
+    }) => {
+      this.initialChannel = data;
+    });
+  };
+
   componentDidLoad() {
     document.addEventListener('click', () => {
       this.editMode = false
     })
-  }
 
-  @Listen('body:connect:authorized')
-  handler(event) {
-    this.authId = event.detail.authId
-    this.suggestions = []
+    this._loadChannel()
   }
 
   attachChannel = (channel: TChannel): void => {
@@ -115,10 +131,11 @@ export class ChannelAction {
   }
 
   render() {
-    if (this.channel && !this.editMode) {
+    const channel = this.channel || this.initialChannel
+    if (channel && !this.editMode) {
       return (
         <div onClick={this.onClick}>
-          <selected-channel channel={this.channel} onEditClick={this.toggleEdit} />
+          <selected-channel channel={channel} onEditClick={this.toggleEdit} />
         </div>
       )
     } else {

@@ -24,7 +24,8 @@
     "@bearer/cli": "next",
     "@types/jest": "^23.3.5",
     "@types/node": "^10.11.0",
-    "jest": "latest"
+    "jest": "latest",
+    "tslint": "latest"
   },
   "license": "MIT",
   "jest": {
