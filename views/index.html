@@ -63,8 +63,8 @@
                 <div class="card-header">
                   <h2 class="card-title">Display</h2>
                 </div>
-                <div class="card-body">
-                  <connect-display setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
+                <div class="card-body"
+                  <connect-display auth-id=`${Bearer.id(bob-auth-id)}` setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
                   </connect-display>
                 </div>
               </div>
@@ -74,7 +74,7 @@
                   <h2 class="card-title">Action</h2>
                 </div>
                 <div class="card-body">
-                  <connect-action auth-id="something-else" setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
+                  <connect-action setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
                   </connect-action>
                 </div>
               </div>
@@ -92,11 +92,11 @@
                 </div>
                 <div class="card-body row">
                   <div class="col">
-                    <channel-action channel-ref-id="hello-world" auth-id="something-else">
+                    <channel-action channel-ref-id="channel-setup-somewhere-else" auth-id="bob-auth-id">
                     </channel-action>
                   </div>
                   <div class="col">
-                    <feature-action channel-ref-id="hello-world" auth-id="something-else" setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
+                    <feature-action channel-ref-id="channel-setup-somewhere-else" auth-id="bob-auth-id" setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
                     </feature-action>
                   </div>
                 </div>

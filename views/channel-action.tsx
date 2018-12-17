@@ -15,17 +15,8 @@ export class ChannelAction {
   @Intent('ListChannel')
   listChannel: BearerFetch
 
-  @Intent("retrieveChannel")
-  fetcherRetrieveChannel: BearerFetch
-
-  @State()
-  initialChannel: TChannel
-
   @Prop()
   authId: string
-
-  @Prop()
-  channelId: string
 
   @State()
   channels: Array<TChannel> = []
@@ -51,20 +42,11 @@ export class ChannelAction {
   @Element()
   el: HTMLElement
 
-  _loadChannel = () => {
-    this.fetcherRetrieveChannel({ referenceId: (this as any).channelRefId }).then(({ data }: {
-      data: TChannel;
-    }) => {
-      this.initialChannel = data;
-    });
-  };
-
   componentDidLoad() {
     document.addEventListener('click', () => {
       this.editMode = false
     })
 
-    this._loadChannel()
   }
 
   attachChannel = (channel: TChannel): void => {
@@ -131,7 +113,7 @@ export class ChannelAction {
   }
 
   render() {
-    const channel = this.channel || this.initialChannel
+    const channel = this.channel || this.channelInitial
     if (channel && !this.editMode) {
       return (
         <div onClick={this.onClick}>
