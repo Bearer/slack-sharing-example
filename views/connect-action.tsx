@@ -3,11 +3,10 @@
 
 */
 
-import Bearer, { RootComponent, Events, Event, EventEmitter, Prop, Element, State } from '@bearer/core'
+import { RootComponent, Event, EventEmitter, Prop, Element, State } from '@bearer/core'
 import '@bearer/ui'
 import Slack from './components/SlackLogoColor'
 import Cross from './components/IconCross'
-import { TAuthSavedPayload } from './types'
 
 export type TAuthorizedPayload = {
   authId: string
@@ -34,17 +33,6 @@ export class ConnectAction {
 
   componentDidLoad() {
     this.authIdInternal = this.authId
-
-    Bearer.emitter.addListener(Events.AUTHORIZED, ({ data }: { data: TAuthSavedPayload }) => {
-      const authId = data.authId || (data as any).authIdentifier
-      this.authId = this.authIdInternal = authId
-      this.authorized.emit({ authId })
-    })
-
-    Bearer.emitter.addListener(Events.REVOKED, (_payload: { data: TAuthSavedPayload }) => {
-      this.authIdInternal = this.authId = null
-      this.revoked.emit()
-    })
   }
 
   renderUnauthorized = ({ authenticate }) => (
@@ -56,10 +44,10 @@ export class ConnectAction {
     </bearer-button>
   )
 
-  renderUnauthorizedIfAuthId = ({ authenticate }) => this.authIdInternal && this.renderUnauthorized({ authenticate })
+  renderUnauthorizedIfAuthId = () => this.authIdInternal && this.renderUnauthorized({ authenticate: this.authenticate })
 
   authenticate = () => {
-    this.el.querySelector('bearer-authorized').authenticate()
+    this.el.querySelector('bearer-authorized').authenticate(this.authId)
   }
 
   render() {

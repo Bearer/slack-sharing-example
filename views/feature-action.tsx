@@ -1,14 +1,4 @@
-import Bearer, {
-  RootComponent,
-  Prop,
-  Events,
-  Event,
-  EventEmitter,
-  Intent,
-  BearerFetch,
-  State,
-  Input
-} from '@bearer/core'
+import { RootComponent, Prop, Event, EventEmitter, Intent, BearerFetch, State, Input } from '@bearer/core'
 import '@bearer/ui'
 
 import { TChannel } from './types'
@@ -23,7 +13,7 @@ export class FeatureAction {
   @Intent('Share')
   fetcher: BearerFetch
 
-  @Prop({ mutable: true })
+  @Prop()
   authId: string
 
   @Prop()
@@ -43,12 +33,6 @@ export class FeatureAction {
 
   @Event()
   shared: EventEmitter
-
-  componentDidLoad() {
-    Bearer.emitter.addListener(Events.AUTHORIZED, ({ data }) => {
-      this.authId = data.authId
-    })
-  }
 
   perform = () => {
     if (this.hasShared) {

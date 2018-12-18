@@ -1,4 +1,4 @@
-import { Prop, Element, RootComponent, Intent, State, BearerFetch, Listen, Output } from '@bearer/core'
+import { Prop, Element, RootComponent, Intent, State, BearerFetch, Output } from '@bearer/core'
 import '@bearer/ui'
 
 import fuzzysearch from './fuzzy'
@@ -14,7 +14,7 @@ export class ChannelAction {
   @Intent('ListChannel')
   listChannel: BearerFetch
 
-  @Prop({ mutable: true })
+  @Prop()
   authId: string
 
   @State()
@@ -43,12 +43,6 @@ export class ChannelAction {
     document.addEventListener('click', () => {
       this.editMode = false
     })
-  }
-
-  @Listen('body:connect:authorized')
-  handler(event) {
-    this.authId = event.detail.authId
-    this.suggestions = []
   }
 
   attachChannel = (channel: TChannel): void => {
@@ -115,10 +109,11 @@ export class ChannelAction {
   }
 
   render() {
-    if (this.channel && !this.editMode) {
+    const channel = this.channel || (this as any).channelInitial
+    if (channel && !this.editMode) {
       return (
         <div onClick={this.onClick}>
-          <selected-channel channel={this.channel} onEditClick={this.toggleEdit} />
+          <selected-channel channel={channel} onEditClick={this.toggleEdit} />
         </div>
       )
     } else {
