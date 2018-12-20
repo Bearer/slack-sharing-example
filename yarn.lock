@@ -18,15 +18,15 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@bearer/bearer-cli@^0.81.1":
-  version "0.81.1"
-  resolved "https://registry.yarnpkg.com/@bearer/bearer-cli/-/bearer-cli-0.81.1.tgz#f19d8e6ac3e2229df6bc18166320e865e5deac83"
-  integrity sha512-INGDXLQuJCBEAWYeHvrAcHPvjynpICo1tyhnG6KK4hTeJ29/TZGK9KuC5G08LEZ5c56OyZ4mjZtZ5Khu19QrLg==
+"@bearer/bearer-cli@^0.76.0":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/bearer-cli/-/bearer-cli-0.76.0.tgz#8634389e064e6b65323299f9c0e23b8c43cd6ad6"
+  integrity sha512-cYBuau7G39UuYeMyqJdQVC0aJoRqahzwgAbjnhqOlQp7ve93y7jWYfD+TnB6XPbusfrgj8/lFm9WSoGOH+vNhg==
   dependencies:
-    "@bearer/intents" "^0.81.0"
-    "@bearer/templates" "^0.81.0"
-    "@bearer/transpiler" "^0.81.0"
-    "@bearer/types" "^0.81.0"
+    "@bearer/intents" "^0.76.0"
+    "@bearer/templates" "^0.76.0"
+    "@bearer/transpiler" "^0.76.0"
+    "@bearer/types" "^0.76.0"
     "@koa/cors" "^2.2.2"
     amazon-cognito-identity-js "^2.0.3"
     archiver "^2.1.1"
@@ -71,16 +71,16 @@
     uuid "^3.3.2"
     webpack "^4.12.0"
 
-"@bearer/cli@next":
-  version "0.81.1"
-  resolved "https://registry.yarnpkg.com/@bearer/cli/-/cli-0.81.1.tgz#803a571313cc6700fcfa7fe5e21c49fd04ff1321"
-  integrity sha512-4/qQSRYuXr3JnL1dddgRxYBonyJB+rK50OK5ZGR0S8N1AZ1vwZKUpRQ9qbv3Pyfp5mLU8k9BauBOB6E+7tN/WQ==
+"@bearer/cli@beta4":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/cli/-/cli-0.76.0.tgz#87c01b895ef40a64c5f0751235a786454e8e31df"
+  integrity sha512-P2SPg2m8pXns37Urhcuq37gmUdLCfZ25BjAngO4jQZVhwyyMUci06IgDMHjqMigxEj90i+vX8tnEA5l2EOeOGQ==
   dependencies:
-    "@bearer/bearer-cli" "^0.81.1"
-    "@bearer/intents" "^0.81.0"
-    "@bearer/templates" "^0.81.0"
-    "@bearer/transpiler" "^0.81.0"
-    "@bearer/types" "^0.81.0"
+    "@bearer/bearer-cli" "^0.76.0"
+    "@bearer/intents" "^0.76.0"
+    "@bearer/templates" "^0.76.0"
+    "@bearer/transpiler" "^0.76.0"
+    "@bearer/types" "^0.76.0"
     "@oclif/command" "^1.5.2"
     "@oclif/config" "^1.8.6"
     "@oclif/plugin-autocomplete" "^0.1.0"
@@ -111,12 +111,12 @@
     typescript-json-schema "^0.32.0"
     webpack "^4.20.2"
 
-"@bearer/core@^0.74.0", "@bearer/core@next":
-  version "0.74.0"
-  resolved "https://registry.yarnpkg.com/@bearer/core/-/core-0.74.0.tgz#df83f4b2647ca442b8030abe3ef43d85e46e8458"
-  integrity sha512-0pIdKLpQvp5H1p2VF4qFTeRJ4TWO+t3LqPYeK3l9Nhv6MzcDEz1LX+cpKB9rRCx0zgN8lMimQFG673egg2Bs8Q==
+"@bearer/core@^0.76.0", "@bearer/core@beta4":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/core/-/core-0.76.0.tgz#de398596c49530559e7f4a31591682b56ce62fb2"
+  integrity sha512-eBeIIQIIJRR3tbgqsG+JvBqJxTy2XeFLHa05BLkv94MZAl3sFN6PHYlytVe12/03nDbVclFjiJQT+MzBdE2ngg==
   dependencies:
-    "@bearer/types" "^0.74.0"
+    "@bearer/types" "^0.76.0"
     "@stencil/core" "0.11.2"
     fbemitter "^2.1.1"
     post-robot "^8.0.26"
@@ -126,34 +126,26 @@
     rollup-plugin-strip "^1.2.0"
     typescript "^2.9.2"
 
-"@bearer/intents@^0.81.0":
-  version "0.81.0"
-  resolved "https://registry.yarnpkg.com/@bearer/intents/-/intents-0.81.0.tgz#c02fae1658dcf405e74abc6527ae5e7e87be5679"
-  integrity sha512-ChcnvbRsGAX7o4+f5aRVj0mNnSv0ofkwH+HtP5F8Jryj0/yKSSzAIJAQL8KKXwisEEPvbYrkW/M5VefbqnhF/w==
+"@bearer/intents@^0.76.0", "@bearer/intents@beta4":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/intents/-/intents-0.76.0.tgz#3c56d4c3573c9fa4ccf96152260c7185cd927a06"
+  integrity sha512-hL+zx1aAW2gx81RZ4HPJOwun/1dUstR3J6X43tS6R6zU2GPkrwecMfPMd4K5cO9gSMPULcv1lS5GkX1/b/SOOQ==
   dependencies:
     axios "^0.18.0"
     typescript "^2.9.2"
 
-"@bearer/intents@next":
-  version "0.74.0"
-  resolved "https://registry.yarnpkg.com/@bearer/intents/-/intents-0.74.0.tgz#d0a83fe22fba3546b76849d8fd686b040b7e57b3"
-  integrity sha512-9Zo/WPBf3WF+smehv0Iv4oW6F1XsgqtZEFdG7npGdlQIm12K+Z/saZ98AfEk6lOlTqLCm3ytNmi0CEv2Hav3Jg==
+"@bearer/templates@^0.76.0":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/templates/-/templates-0.76.0.tgz#60f3a878f9e9789530bd8f0778838bf9b0f9bd0b"
+  integrity sha512-z8+F2ncb7n2dBczxfAai55FwPumTzWBV+Qtvgg6htKEcVt2biCZ1JakTG6xbbLfvYDThQB7kKBHY1r+6QR6TUg==
   dependencies:
-    axios "^0.18.0"
+    "@bearer/types" "^0.76.0"
     typescript "^2.9.2"
 
-"@bearer/templates@^0.81.0":
-  version "0.81.0"
-  resolved "https://registry.yarnpkg.com/@bearer/templates/-/templates-0.81.0.tgz#e022b06bf9b62627ca878a6e5bcd36adcb23f062"
-  integrity sha512-0Kmyg1IWsVCVz8Q3zkxGUY0lwj11i+C8UQr0iEtVB1oTpWn1thy+1F0cQlhhZZcUvz87p43zPPqpmP0YRxE5dQ==
-  dependencies:
-    "@bearer/types" "^0.81.0"
-    typescript "^2.9.2"
-
-"@bearer/transpiler@^0.81.0":
-  version "0.81.0"
-  resolved "https://registry.yarnpkg.com/@bearer/transpiler/-/transpiler-0.81.0.tgz#6655347622390377973bcd70ae8689d6bcdb0c51"
-  integrity sha512-+0AHGNBbT6sNjqZT0oDRnFAYcn4EepOuLPxZsZCNbbDr33O7WNABJEae5AW7J0Vx5kHleB2ntXrtakUa+01wbw==
+"@bearer/transpiler@^0.76.0":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/transpiler/-/transpiler-0.76.0.tgz#f2a043c2bab622baf47dd6fb4dc31f179d050b5d"
+  integrity sha512-UajvrWxvMeUJIuOZlqfWqQmqkuPFuP9VvAMk8YS2jr1iVEvdj1i4090dsyhx0HOtcKLlFgF1ym0DMReX+SpuTw==
   dependencies:
     async-foreach "^0.1.3"
     case "^1.5.5"
@@ -162,22 +154,17 @@
     typescript "^2.9.2"
     typescript-json-schema "^0.32.0"
 
-"@bearer/types@^0.74.0":
-  version "0.74.0"
-  resolved "https://registry.yarnpkg.com/@bearer/types/-/types-0.74.0.tgz#74d35e48edcc50989106aa3403244172a566160b"
-  integrity sha512-i1jBHl1NDVF+dlJterVmHHIyxEIjgAyFE7ssBAIlGWIi39DrAiALwx+VQ+ABeBZElMmCpeS1C1UsCanksz74oQ==
+"@bearer/types@^0.76.0":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/types/-/types-0.76.0.tgz#d7ea4650875fb7e856d12f019bc1eff42b935fc4"
+  integrity sha512-Py9aOuQk7yd7R8BjGHsxPdSOFzyAMVypBhF8DPWyx2tS08TX793z5J1CKfuoJRqio273caxIA9v7caV6lc2MJw==
 
-"@bearer/types@^0.81.0":
-  version "0.81.0"
-  resolved "https://registry.yarnpkg.com/@bearer/types/-/types-0.81.0.tgz#3f90d9847cecc7d0d0376bb1ab236164ce43d55c"
-  integrity sha512-TkW3w/yCCXJ6i2TtBa/J5h5OoP/8U5TkeKht8yBhaM+dsNL7MreE0tSXONqTjmv0SgCnRfwJja0FqGxnb5iZhQ==
-
-"@bearer/ui@next":
-  version "0.74.0"
-  resolved "https://registry.yarnpkg.com/@bearer/ui/-/ui-0.74.0.tgz#9c694ae1b2569757cdb2ed6025e9d96a05b879c7"
-  integrity sha512-TRomW3nVns0iYDkpC5yRGBCRZoNQ9255KuFIZiiKWROSQ1DG1G9thhPPltt+rQwIfNeJ9x2mBvDKnMyoGDlB8g==
+"@bearer/ui@beta4":
+  version "0.76.0"
+  resolved "https://registry.yarnpkg.com/@bearer/ui/-/ui-0.76.0.tgz#a9eb9633c740e39814e448c104d07c0ed52b4e54"
+  integrity sha512-41bdm4UaEHSoCNdMdb0AGVUqBgTQqeaCtxDLc6M6E3bleMQWGNbQZ0f2yRvH0eqnUNoWMDHRoRfGl5+M8XoF5w==
   dependencies:
-    "@bearer/core" "^0.74.0"
+    "@bearer/core" "^0.76.0"
     "@stencil/core" "0.11.2"
     "@stencil/sass" "^0.1.0"
     bootstrap "^4.1.0"
