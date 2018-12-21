@@ -3,7 +3,7 @@
 
 */
 
-import { RootComponent, Event, EventEmitter, Prop, Element, State } from '@bearer/core'
+import Bearer, { RootComponent, Event, Events, EventEmitter, Prop, Element, State } from '@bearer/core'
 import '@bearer/ui'
 import Slack from './components/SlackLogoColor'
 import Cross from './components/IconCross'
@@ -11,6 +11,7 @@ import Cross from './components/IconCross'
 export type TAuthorizedPayload = {
   authId: string
 }
+import { TAuthSavedPayload } from './types'
 
 @RootComponent({
   role: 'action',
@@ -33,6 +34,16 @@ export class ConnectAction {
 
   componentDidLoad() {
     this.authIdInternal = this.authId
+    Bearer.emitter.addListener(Events.AUTHORIZED, ({ data }: { data: TAuthSavedPayload }) => {
+      const authId = data.authId || (data as any).authIdentifier
+      this.authId = this.authIdInternal = authId
+      this.authorized.emit({ authId })
+    })
+
+    Bearer.emitter.addListener(Events.REVOKED, (_payload: { data: TAuthSavedPayload }) => {
+      this.authIdInternal = this.authId = null
+      this.revoked.emit()
+    })
   }
 
   renderUnauthorized = ({ authenticate }) => (
