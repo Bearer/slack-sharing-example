@@ -7,11 +7,11 @@
     "consent": true
   },
   "tokenParams": {
-    "redirect_uri": "{{CALLBACK_URL}}"
+    "redirect_uri": "{{CALLBACK_URL_V2}}"
   },
   "config": {
     "accessType": "offline",
-    "callbackURL": "{{CALLBACK_URL}}",
+    "callbackURL": "{{CALLBACK_URL_V2}}",
     "scope": ["channels:read", "chat:write:bot", "groups:read"]
   },
   "setupViews": [
