@@ -3,37 +3,50 @@
   This file has been generated automatically and should not be edited.
 */
 
-import { RootComponent, State, Event, EventEmitter } from '@bearer/core'
-import '@bearer/ui'
+import {
+  RootComponent,
+  State,
+  Event,
+  EventEmitter,
+  Element
+} from "@bearer/core";
+import "@bearer/ui";
 
 export type TSetupPayload = {
-  setupId: string
-}
+  setupId: string;
+};
 
 @RootComponent({
-  group: 'setup',
-  role: 'action'
+  group: "setup",
+  role: "action"
 })
 export class SetupAction {
   @Event()
-  saved: EventEmitter<TSetupPayload>
+  saved: EventEmitter<TSetupPayload>;
+  @Element() el: HTMLElement;
 
   onSetupSuccess = (event: any) => {
-    this.saved.emit({ setupId: event.detail.referenceId })
-  }
+    this.el.shadowRoot
+      .querySelector<HTMLBearerDropdownButtonElement>("bearer-dropdown-button")
+      .toggle(false);
+    this.saved.emit({ setupId: event.detail.referenceId });
+  };
 
   @State()
   fields = [
-    { type: 'text', label: 'Client ID', controlName: 'clientID' },
-    { type: 'password', label: 'Client Secret', controlName: 'clientSecret' }
-  ]
-  @State()
-  innerListener = `setup_success:BEARER_SCENARIO_ID`
+    { type: "text", label: "Client ID", controlName: "clientID" },
+    { type: "password", label: "Client Secret", controlName: "clientSecret" }
+  ];
   render() {
     return (
-      <bearer-dropdown-button innerListener={this.innerListener} btnProps={{ content: 'Setup component' }}>
-        <bearer-setup onSetupSuccess={this.onSetupSuccess} scenarioId="BEARER_SCENARIO_ID" fields={this.fields} />
+      <bearer-dropdown-button>
+        <span slot="dropdown-btn-content">Setup component</span>
+        <bearer-setup
+          onSetupSuccess={this.onSetupSuccess}
+          scenarioId="BEARER_SCENARIO_ID"
+          fields={this.fields}
+        />
       </bearer-dropdown-button>
-    )
+    );
   }
 }

@@ -1,75 +1,69 @@
-import { FetchData, TOAUTH2AuthContext, TFetchDataCallback } from '@bearer/intents'
-import Client from './client'
+import { FetchData, TOAUTH2AuthContext } from "@bearer/intents";
+import Client from "./client";
 
 type TShareParams = {
-  authId: string
-  channelId: string
-}
+  authId: string;
+  channelId: string;
+};
 
 type TShareContext = {
   channel: {
-    id: string
-  }
-}
+    id: string;
+  };
+};
 
 type TShareBody = {
-  message: string
-}
+  message: string;
+};
 
 export default class ShareIntent {
-  static intentName: string = 'Share'
-  static intentType: any = FetchData
+  static intentType: any = FetchData;
 
-  static action(
-    context: TOAUTH2AuthContext & TShareContext,
-    _params: TShareParams,
-    body: TShareBody,
-    callback: TFetchDataCallback
-  ) {
-    const channel = context.channel
+  static async action({
+    context,
+    params
+  }: {
+    context: TOAUTH2AuthContext & TShareContext;
+    params: TShareBody;
+  }) {
+    const channel = context.channel;
     try {
       if (!channel) {
-        throw new MissingChannel()
+        throw new MissingChannel();
       }
-      if (!body.message) {
-        throw new MissingMessage()
+      if (!params.message) {
+        throw new MissingMessage();
       }
 
-      Client(context.authAccess.accessToken)
-        .post(`chat.postMessage`, {
+      const { data } = await Client(context.authAccess.accessToken).post(
+        `chat.postMessage`,
+        {
           channel: channel.id,
-          text: body.message,
+          text: params.message,
           as_user: false,
-          parse: 'full'
-        })
-        .then(({ data }) => {
-          if (data.ok) {
-            callback({ data })
-          } else {
-            callback({ data })
-          }
-        })
-        .catch(error => {
-          callback({ error: error.toString() })
-        })
+          parse: "full"
+        }
+      );
+
+      return { data };
     } catch (error) {
-      callback({ error: error.toString() })
+      return { error: error.toString() };
     }
   }
 }
 
 class MissingChannel extends Error {
   constructor() {
-    super()
-    this.name = 'MissingChannel'
-    this.message = 'No channel present'
+    super();
+    this.name = "MissingChannel";
+    this.message = "No channel present";
   }
 }
 
 class MissingMessage extends Error {
   constructor() {
-    super()
-    this.name = 'MissingMessage'
-    this.message = 'No message to share'
+    super();
+    this.name = "MissingMessage";
+    this.message = "No message to share";
   }
 }
