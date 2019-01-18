@@ -19,7 +19,6 @@ export default class ListChannelIntent {
         "conversations.list",
         { params: { types: "public_channel,private_channel" } }
       );
-      console.log("RESPONSE", res);
       const { data: response } = res;
       if (response.ok) {
         return {
