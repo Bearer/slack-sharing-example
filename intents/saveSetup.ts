@@ -1,19 +1,15 @@
 import {
   TOAUTH2AuthContext,
-  TSaveStatePayload,
   SaveState,
-  TSaveActionEvent
+  TSaveActionEvent,
+  TSavePromise
 } from "@bearer/intents";
-import { promises } from "fs";
 
-export default class SaveSetupIntent {
-  static intentType = SaveState;
-
-  static async action(
-    event: TSaveActionEvent<TOAUTH2AuthContext, State, Params>
-  ): Promise<ReturnedData> {
-    // const token = event.context.authAccess.accessToken
-    // Put your logic here
+export default class SaveSetupIntent extends SaveState
+  implements SaveState<State, ReturnedData, any, TOAUTH2AuthContext> {
+  async action(
+    event: TSaveActionEvent<State, Params, TOAUTH2AuthContext>
+  ): TSavePromise<State, ReturnedData> {
     return { state: event.params.setup, data: event.params.setup };
   }
 }
@@ -30,10 +26,7 @@ export type State = {
   clientSecret: string;
 };
 
-export type ReturnedData = TSaveStatePayload<
-  State,
-  {
-    clientID: string;
-    clientSecret: string;
-  }
->;
+export type ReturnedData = {
+  clientID: string;
+  clientSecret: string;
+};

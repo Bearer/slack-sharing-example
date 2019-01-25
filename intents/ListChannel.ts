@@ -1,4 +1,9 @@
-import { FetchData, TOAUTH2AuthContext } from "@bearer/intents";
+import {
+  FetchData,
+  TOAUTH2AuthContext,
+  TFetchActionEvent,
+  TFetchPromise
+} from "@bearer/intents";
 import Client from "./client";
 
 type TSlackChannelsPayload = {
@@ -10,12 +15,14 @@ type TSlackChannelsPayload = {
     is_archived: boolean;
   }>;
 };
-export default class ListChannelIntent {
-  static intentType: any = FetchData;
 
-  static async action({ context }: { context: TOAUTH2AuthContext }) {
+export default class ListChannelIntent extends FetchData
+  implements FetchData<ReturnedData, any, TOAUTH2AuthContext> {
+  async action(
+    event: TFetchActionEvent<Params, TOAUTH2AuthContext>
+  ): TFetchPromise<ReturnedData> {
     try {
-      const res = await Client(context.authAccess.accessToken).get(
+      const res = await Client(event.context.authAccess.accessToken).get(
         "conversations.list",
         { params: { types: "public_channel,private_channel" } }
       );
@@ -36,3 +43,7 @@ export default class ListChannelIntent {
     }
   }
 }
+
+export type Params = {};
+
+export type ReturnedData = {};

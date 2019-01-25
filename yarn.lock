@@ -18,14 +18,14 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
-"@bearer/bearer-cli@^0.89.2":
-  version "0.89.2"
-  resolved "https://registry.yarnpkg.com/@bearer/bearer-cli/-/bearer-cli-0.89.2.tgz#5e696ef67853bddd88ebdfa5f6a2309a7102993c"
-  integrity sha512-gPwSpsRbyDbGMyYSS5pglfAUVCArq3Z1RRjPMyLsMMemWUKwG+aDUUQCf9+uxYleXj5CGVN2DQUL8fLnuvhM/g==
+"@bearer/bearer-cli@^0.91.0":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/bearer-cli/-/bearer-cli-0.91.0.tgz#67b2bd1e529686482dff73403f4f5f5c1d201481"
+  integrity sha512-dM6WxSiGaiAxJUBjwSVZVhuXQ1RtvVPABOD6+N4dKo77yI9BDt0DNVFCp3mE751kYvqGk6HQUkH7lq2Fjjil8g==
   dependencies:
-    "@bearer/intents" "^0.89.2"
-    "@bearer/transpiler" "^0.89.0"
-    "@bearer/types" "^0.89.0"
+    "@bearer/intents" "^0.91.0"
+    "@bearer/transpiler" "^0.91.0"
+    "@bearer/types" "^0.91.0"
     "@koa/cors" "^2.2.2"
     amazon-cognito-identity-js "^2.0.3"
     archiver "^2.1.1"
@@ -63,23 +63,23 @@
     stream-buffers "^3.0.1"
     terminal-kit "^1.15.1"
     ts-loader "^4.4.1"
-    typescript "^2.9.2"
+    typescript "^3.2.4"
     unzip "^0.1.11"
     unzip-stream "^0.3.0"
     update-notifier "^2.5.0"
     uuid "^3.3.2"
     webpack "^4.12.0"
 
-"@bearer/cli@^0.89.2":
-  version "0.89.2"
-  resolved "https://registry.yarnpkg.com/@bearer/cli/-/cli-0.89.2.tgz#ef0cd8e45e9b5580fd0f75b9494b0c32ebef7f9e"
-  integrity sha512-MxH42khPWZlGk/NGXNLdM4sGP8wCrBcdZsyl2qU5wI9e9yDjJxc4XALsqeQ02Ucc+infHhOQ+hWmkeg8SzMGPw==
+"@bearer/cli@next":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/cli/-/cli-0.91.0.tgz#cf9fc251e5a1414f7d19e6e96a981aa7a2b84fa1"
+  integrity sha512-2WHL+jooivzYi1eLD7bJVI98xg9WM2A22VnZ+YElQonjBV0sML2IfqAu++VUbMzBNAy2ja/JzaxM4aVsOGVTkg==
   dependencies:
-    "@bearer/bearer-cli" "^0.89.2"
-    "@bearer/intents" "^0.89.2"
-    "@bearer/security" "^0.89.0"
-    "@bearer/transpiler" "^0.89.0"
-    "@bearer/types" "^0.89.0"
+    "@bearer/bearer-cli" "^0.91.0"
+    "@bearer/intents" "^0.91.0"
+    "@bearer/security" "^0.91.0"
+    "@bearer/transpiler" "^0.91.0"
+    "@bearer/types" "^0.91.0"
     "@oclif/command" "^1.5.2"
     "@oclif/config" "^1.8.6"
     "@oclif/plugin-autocomplete" "^0.1.0"
@@ -106,15 +106,15 @@
     rc "^1.2.8"
     sqlite3 "^4.0.2"
     tslib "^1"
-    typescript-json-schema "^0.32.0"
+    typescript-json-schema "^0.34.0"
     webpack "^4.20.2"
 
-"@bearer/core@^0.89.0":
-  version "0.89.0"
-  resolved "https://registry.yarnpkg.com/@bearer/core/-/core-0.89.0.tgz#db7172199c44b08e2bb1f307ff632ce73ffa5737"
-  integrity sha512-RKLcsKQtCCyDSbplw5BCuojxmlQE+ncVqoRyymaEyY2Cp0V2xRhHvBndVyyKDUXosAadf6fhvqCXcooHK+y/tQ==
+"@bearer/core@^0.91.0", "@bearer/core@next":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/core/-/core-0.91.0.tgz#111dbb154298531796f840ec1601ece5cfbe2bca"
+  integrity sha512-caLavDMhWjNbKcIeCSKVhD9yAhxA7x51FIZFAs9LoeiMLUWTWFVFisnoQtdzgY8bnzYNIhbeEa8+6oGmPtDxFg==
   dependencies:
-    "@bearer/types" "^0.89.0"
+    "@bearer/types" "^0.91.0"
     "@stencil/core" "0.11.2"
     fbemitter "^2.1.1"
     post-robot "^8.0.26"
@@ -122,53 +122,53 @@
     rollup-plugin-env "^0.21.4"
     rollup-plugin-replace "^2.1.0"
     rollup-plugin-strip "^1.2.0"
-    typescript "^2.9.2"
+    typescript "^3.2.4"
 
-"@bearer/intents@^0.89.2":
-  version "0.89.2"
-  resolved "https://registry.yarnpkg.com/@bearer/intents/-/intents-0.89.2.tgz#0ce50ae8dc126a89b85c26eed043f8459171dd0a"
-  integrity sha512-X+mkG+KtH46YAQl+AsNQz6/lL4yJt4jAa4uK/GKrlOuvORzydjWK4ezlwidK1Kq0gk98rXxxSDZrnsGB6rHT7Q==
+"@bearer/intents@^0.91.0", "@bearer/intents@next":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/intents/-/intents-0.91.0.tgz#2e33303b8d9a67c298d9a834766b577b927eee96"
+  integrity sha512-wAs/7mlnZ5CYydlpgj4CbBKT3UfEgKPvz0jqi/xCW9Hto1nR01OYHCLA4n+CQrGOKr9Dp+kFY2z7nVNBcLsPdg==
   dependencies:
-    "@bearer/logger" "^0.89.0"
+    "@bearer/logger" "^0.91.0"
     axios "^0.18.0"
-    typescript "^2.9.2"
+    typescript "^3.2.4"
     uuid "^3.3.2"
 
-"@bearer/logger@^0.89.0":
-  version "0.89.0"
-  resolved "https://registry.yarnpkg.com/@bearer/logger/-/logger-0.89.0.tgz#188e489cbde013b6f803cfd4aef56a00eb119739"
-  integrity sha512-GVQbEbAj7RJ8Y6boDZ0mYCqrLJftto7PNXCEK65v0Bfq6FS6A637qumgdi/x+PhJPCjDYgunF6unbyTvqMRuVA==
+"@bearer/logger@^0.91.0":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/logger/-/logger-0.91.0.tgz#5447c663b4e2f36f77751e63aa016d7f5d4f66d4"
+  integrity sha512-RAkzXKlH1JpiZb8ZRDbSyKk3lF9djLbme831zaKLIg7nLWfcy/ZhBKUEgHOtlGjTHm4yk5ztR30KTTjIqW9BVQ==
   dependencies:
     debug "^4.1.0"
 
-"@bearer/security@^0.89.0":
-  version "0.89.0"
-  resolved "https://registry.yarnpkg.com/@bearer/security/-/security-0.89.0.tgz#f3e9a8719dbab1e32acd73d755abdbec5f73fda0"
-  integrity sha512-1yxe0Z7ggz/7IBhQhC/DC5C24Qscvt3UfJo3CA2+eDIB0u2SqQzdLGkn3AxZMTRPdcQ5EqyMlXesj83ofRFWrQ==
+"@bearer/security@^0.91.0":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/security/-/security-0.91.0.tgz#8c39ff6dcae43afc7dfe2126db50fc6cd529be06"
+  integrity sha512-Q9dja6L+LKBCggTxQn3D+mGibJnRbnvfXaqakHmqqVgkaTxxanJ6TgtiPm84fFJD3uusz4SS9OUyYO/xi1r9Rw==
 
-"@bearer/transpiler@^0.89.0":
-  version "0.89.0"
-  resolved "https://registry.yarnpkg.com/@bearer/transpiler/-/transpiler-0.89.0.tgz#9c2285b983599513276e7ab52ba1a7fc26b18fc2"
-  integrity sha512-pXhEr1bl5UL3iCIVlU6d5zfDrc0xiLXDYElJ/4jYd6xGkBRstwm9RN2RlBTQ5N9l9nNuhx7FPsCvHl64W6xqOQ==
+"@bearer/transpiler@^0.91.0":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/transpiler/-/transpiler-0.91.0.tgz#cff24117e8f5c272fb868e239ccf24670c42ea84"
+  integrity sha512-lrlEHBygatHD9JLgeUSH98eVVjEOmclT/zEHWGTugQ3nTRt7S32OVfjoXsDpVawA2y2Ejpip3om3HP2bsHht6g==
   dependencies:
     async-foreach "^0.1.3"
     case "^1.5.5"
     command-line-args "^5.0.2"
     fs-extra "^6.0.1"
-    typescript "^2.9.2"
-    typescript-json-schema "^0.32.0"
+    typescript "^3.2.4"
+    typescript-json-schema "^0.34.0"
 
-"@bearer/types@^0.89.0":
-  version "0.89.0"
-  resolved "https://registry.yarnpkg.com/@bearer/types/-/types-0.89.0.tgz#133e69f3470be2369c0a3ec5a252d3df0168d561"
-  integrity sha512-TuExZC+XcZVodZEty3VwPKppGxj08VGoS55/wQqj7FIYE45KGe+r8JLp6+uwYjjnvzg0qAP+/sdw7e2Npqd6Dw==
+"@bearer/types@^0.91.0":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/types/-/types-0.91.0.tgz#bb1d644c849f0a9a3901011ad3cb49bb1c676bfc"
+  integrity sha512-gC4P5c+403fRIqXATREwspTIrApxIEwvLxEytr8FGu44pLfisqW4h7vR+IcacxwdSXyCIEHpplggTKU26AQ4kQ==
 
-"@bearer/ui@^0.89.1":
-  version "0.89.1"
-  resolved "https://registry.yarnpkg.com/@bearer/ui/-/ui-0.89.1.tgz#ec043825f401bba5f60411743d16df6b07cf4fd0"
-  integrity sha512-YW2HDyMTyMWMjDT5OxyI0aYCrhvJS7mQUXbDw/TDZqCY+PwliXx5hh0hvaOxxbUtyBe95ckzJvRLxOWtFxUQEQ==
+"@bearer/ui@next":
+  version "0.91.0"
+  resolved "https://registry.yarnpkg.com/@bearer/ui/-/ui-0.91.0.tgz#1c0b4b1f4110477f89f0b5237fdd7e9b6615e31e"
+  integrity sha512-QUDt8nBMN0Agit3gAI6lIO3KUWUUzp7TX/4lYoSxeZcwKOtHcMzkH2THqigi9uLncZcBPoqKBkRL9xEqO0/aDQ==
   dependencies:
-    "@bearer/core" "^0.89.0"
+    "@bearer/core" "^0.91.0"
     "@stencil/core" "0.11.2"
     "@stencil/sass" "^0.1.0"
     bootstrap "^4.1.0"
@@ -8160,25 +8160,25 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript-json-schema@^0.32.0:
-  version "0.32.0"
-  resolved "https://registry.yarnpkg.com/typescript-json-schema/-/typescript-json-schema-0.32.0.tgz#d95af55eaf01be6d44b280fdc3f9b3a264435642"
-  integrity sha512-gNjjlQ+fQgwboTOKu7arXipwtPdp2Es6XlHhqGYRDUcOEHiMbFop8HPDinRZfsAxPAhfj4y13EwcTPIma9Mmyg==
+typescript-json-schema@^0.34.0:
+  version "0.34.0"
+  resolved "https://registry.yarnpkg.com/typescript-json-schema/-/typescript-json-schema-0.34.0.tgz#25c6effeee9e885771718f510bf03122f8624e18"
+  integrity sha512-BCTqkHXEIOcI78kipp6tEMUFS8b5dbWIp8tpaPC5FFjmK7iFsE5qWS6L6S+lmt71+APp+RlapXb8EEyqkmOt/w==
   dependencies:
     glob "~7.1.2"
     json-stable-stringify "^1.0.1"
     typescript "^3.0.1"
     yargs "^12.0.1"
 
-typescript@^2.9.2, typescript@~2.9.1:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
-  integrity sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w==
-
-typescript@^3.0.1:
+typescript@^3.0.1, typescript@^3.2.4:
   version "3.2.4"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.2.4.tgz#c585cb952912263d915b462726ce244ba510ef3d"
   integrity sha512-0RNDbSdEokBeEAkgNbxJ+BLwSManFy9TeXz8uW+48j/xhEXv1ePME60olyzw2XzUqUBNAYFeJadIqAgNqIACwg==
+
+typescript@~2.9.1:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
+  integrity sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w==
 
 typical@^2.6.1:
   version "2.6.1"
