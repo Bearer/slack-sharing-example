@@ -1,134 +1,137 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0" />
+    <link href="https://cdn.rawgit.com/tabler/tabler/dev/dist/assets/css/tabler.css" rel="stylesheet" />
+    <title>NewSlack</title>
+    <script src="/build/localhost.js"></script>
+  </head>
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <link href="https://cdn.rawgit.com/tabler/tabler/dev/dist/assets/css/tabler.css" rel="stylesheet" />
-  <title>NewSlack</title>
-  <script src="/build/localhost.js"></script>
-</head>
-
-<body>
-  <div class="page">
-    <div class="page-main">
-      <div class="header py-4">
-        <div class="container">
-          <div class="d-flex">
-            <a class="header-brand" href="#">
-              <img src="https://app.bearer.sh/static/media/logo.5b35e2ab.svg" class="header-brand-img" alt="Bearer Logo">
-            </a>
-            <div class="d-flex order-lg-2 ml-auto">
+  <body>
+    <div class="page">
+      <div class="page-main">
+        <div class="header py-4">
+          <div class="container">
+            <div class="d-flex">
+              <a class="header-brand" href="#">
+                <img
+                  src="https://app.bearer.sh/static/media/logo.5b35e2ab.svg"
+                  class="header-brand-img"
+                  alt="Bearer Logo"
+                />
+              </a>
+              <div class="d-flex order-lg-2 ml-auto"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="my-3 my-md-5">
-        <div class="container">
-          <div class="page-header">
-            <h1 class="page-title">Share on Slack</h1>
-          </div>
-          <div class="card ">
-            <div class="card-header">
-              <h1 class="card-title">Setup</h1>
-            </div>
-            <div class="card-body">
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-title">Display</h2>
+        <div class="my-3 my-md-5">
+          <div class="container">
+            <div class="page-header"><h1 class="page-title">Share on Slack</h1></div>
+            <div class="card ">
+              <div class="card-header"><h1 class="card-title">Setup</h1></div>
+              <div class="card-body">
+                <div class="card">
+                  <div class="card-header"><h2 class="card-title">Display</h2></div>
+                  <div class="card-body"><setup-display> </setup-display></div>
                 </div>
-                <div class="card-body">
-                  <setup-display>
-                  </setup-display>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-title">Action</h2>
-                </div>
-                <div class="card-body">
-                  <setup-action>
-                  </setup-action>
+                <div class="card">
+                  <div class="card-header"><h2 class="card-title">Action</h2></div>
+                  <div class="card-body"><setup-action> </setup-action></div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <div class="card">
-            <div class="card-header">
-              <h1 class="card-title">Connect slack</h1>
-            </div>
-            <div class="card-body">
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-title">Display</h2>
-                </div>
-                <div class="card-body">
-                  <connect-display setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
-                  </connect-display>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-title">Action</h2>
-                </div>
-                <div class="card-body">
-                  <connect-action setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
-                  </connect-action>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1 class="card-title">Select channel</h1>
-            </div>
-            <div class="card-body">
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-title">Action</h2>
-                </div>
-                <div class="card-body">
-                  <channel-action>
-                  </channel-action>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="card">
-            <div class="card-header">
-              <h1 class="card-title">Share on Slack</h1>
-            </div>
-            <div class="card-body">
-              <div class="card">
-                <div class="card-header">
-                  <h2 class="card-title">Action</h2>
-                </div>
-                <div class="card-body row">
-                  <div class="col">
-                    <channel-action>
-                    </channel-action>
+            <div class="card">
+              <div class="card-header"><h1 class="card-title">Connect slack</h1></div>
+              <div class="card-body">
+                <div class="card">
+                  <div class="card-header"><h2 class="card-title">Display</h2></div>
+                  <div class="card-body">
+                    <connect-display setup-id="fc3c96cde6760fd99fa9209b3b2edeab"> </connect-display>
                   </div>
-                  <div class="col">
-                    <feature-action setup-id="fc3c96cde6760fd99fa9209b3b2edeab">
-                    </feature-action>
+                </div>
+                <div class="card">
+                  <div class="card-header"><h2 class="card-title">Action</h2></div>
+                  <div class="card-body">
+                    <connect-action setup-id="fc3c96cde6760fd99fa9209b3b2edeab"> </connect-action>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
+            <div class="card">
+              <div class="card-header"><h1 class="card-title">Select channel</h1></div>
+              <div class="card-body">
+                <div class="card">
+                  <div class="card-header"><h2 class="card-title">Action</h2></div>
+                  <div class="card-body"><channel-action> </channel-action></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header"><h1 class="card-title">Share on Slack</h1></div>
+              <div class="card-body">
+                <div class="card">
+                  <div class="card-header"><h2 class="card-title">Action</h2></div>
+                  <div class="card-body row">
+                    <div class="col"><channel-action> </channel-action></div>
+                    <div class="col">
+                      <feature-action
+                        setup-id="fc3c96cde6760fd99fa9209b3b2edeab"
+                        message="my message\ntest"
+                        attachments="[
+                        {
+                          &quot;text&quot;: &quot;Choose a game to play&quot;,
+                          &quot;fallback&quot;: &quot;You are unable to choose a game&quot;,
+                          &quot;callback_id&quot;: &quot;wopr_game&quot;,
+                          &quot;color&quot;: &quot;#3AA3E3&quot;,
+                          &quot;attachment_type&quot;: &quot;default&quot;,
+                          &quot;actions&quot;: [
+                            {
+                              &quot;name&quot;: &quot;game&quot;,
+                              &quot;text&quot;: &quot;Chess&quot;,
+                              &quot;type&quot;: &quot;button&quot;,
+                              &quot;value&quot;: &quot;chess&quot;
+                            },
+                            {
+                              &quot;name&quot;: &quot;game&quot;,
+                              &quot;text&quot;: &quot;Falken's Maze&quot;,
+                              &quot;type&quot;: &quot;button&quot;,
+                              &quot;value&quot;: &quot;maze&quot;
+                            },
+                            {
+                              &quot;name&quot;: &quot;game&quot;,
+                              &quot;text&quot;: &quot;Thermonuclear War&quot;,
+                              &quot;style&quot;: &quot;danger&quot;,
+                              &quot;type&quot;: &quot;button&quot;,
+                              &quot;value&quot;: &quot;war&quot;,
+                              &quot;confirm&quot;: {
+                                &quot;title&quot;: &quot;Are you sure?&quot;,
+                                &quot;text&quot;: &quot;Wouldn't you prefer a good game of chess?&quot;,
+                                &quot;ok_text&quot;: &quot;Yes&quot;,
+                                &quot;dismiss_text&quot;: &quot;No&quot;
+                              }
+                            }
+                          ]
+                        }
+                      ]"
+                      >
+                      </feature-action>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <script>
-    document.addEventListener('bearer|YOU_SCENARIO_ID|setup|saved', function (e) {
-      console.log(e)
-    })
-  </script>
-</body>
-
+    <script>
+      document.addEventListener('bearer|YOU_SCENARIO_ID|setup|saved', function(e) {
+        console.log(e)
+      })
+    </script>
+  </body>
 </html>

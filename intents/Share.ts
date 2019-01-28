@@ -14,6 +14,7 @@ type TShareContext = {
 
 type TShareBody = {
   message: string
+  attachments: string
 }
 
 export default class ShareIntent {
@@ -38,9 +39,10 @@ export default class ShareIntent {
       Client(context.authAccess.accessToken)
         .post(`chat.postMessage`, {
           channel: channel.id,
-          text: body.message,
+          text: body.message.replace('\\n', '\n'),
           as_user: false,
-          parse: 'full'
+          parse: 'full',
+          attachments: body.attachments
         })
         .then(({ data }) => {
           if (data.ok) {

@@ -30,7 +30,9 @@ export class FeatureAction {
   text: string = 'Share on slack'
 
   @Prop()
-  message: string = 'Hey, this is Bearer.sh reaching out 🐻'
+  message: string = 'Hey, this is Bearer.sh reaching out 🐻\ntest'
+  @Prop()
+  attachments: any = ''
 
   @State()
   loading: boolean = false
@@ -59,7 +61,7 @@ export class FeatureAction {
     this.fetcher({
       authId: this.authId,
       channelId: (this as any).channelRefId,
-      body: { message: this.message }
+      body: { message: this.message, attachments: this.attachments }
     })
       .then(({ data }) => {
         if (data.ok) {
