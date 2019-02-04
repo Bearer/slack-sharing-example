@@ -1,34 +1,49 @@
-import { FetchData, TOAUTH2AuthContext, TFetchDataCallback } from '@bearer/intents'
-// Uncomment this line if you need to use Client
-import Client from './client'
+import {
+  FetchData,
+  TOAUTH2AuthContext,
+  TFetchActionEvent,
+  TFetchPromise
+} from "@bearer/intents";
+import Client from "./client";
 
 type TSlackChannelsPayload = {
-  ok: boolean
-  channels: Array<{ id: string; name: string; is_private: boolean; is_archived: boolean }>
-}
-export default class ListChannelIntent {
-  static intentName: string = 'ListChannel'
-  static intentType: any = FetchData
+  ok: boolean;
+  channels: Array<{
+    id: string;
+    name: string;
+    is_private: boolean;
+    is_archived: boolean;
+  }>;
+};
 
-  static action(context: TOAUTH2AuthContext, params: any, body: any, callback: TFetchDataCallback) {
-    Client(context.authAccess.accessToken)
-      .get('conversations.list', { params: { types: 'public_channel,private_channel' } })
-      .then((response: { data: TSlackChannelsPayload }) => {
-        if (response.data.ok) {
-          callback({
-            data: response.data.channels
-              .filter(({ is_archived }) => !is_archived)
-              .map(({ id, name, is_private }) => ({ id, name, is_private }))
-          })
-        } else {
-          callback({ error: `Error while fetching users ${JSON.stringify(response.data)}` })
-        }
-      })
-      .catch(e => {
-        console.log('[BEARER]', 'e', e)
-        callback({
-          error: e.toString()
-        })
-      })
+export default class ListChannelIntent extends FetchData
+  implements FetchData<ReturnedData, any, TOAUTH2AuthContext> {
+  async action(
+    event: TFetchActionEvent<Params, TOAUTH2AuthContext>
+  ): TFetchPromise<ReturnedData> {
+    try {
+      const res = await Client(event.context.authAccess.accessToken).get(
+        "conversations.list",
+        { params: { types: "public_channel,private_channel" } }
+      );
+      const { data: response } = res;
+      if (response.ok) {
+        return {
+          data: response.channels
+            .filter(({ is_archived }) => !is_archived)
+            .map(({ id, name, is_private }) => ({ id, name, is_private }))
+        };
+      } else {
+        return {
+          error: `Error while fetching users ${JSON.stringify(response.data)}`
+        };
+      }
+    } catch (e) {
+      return { error: e.toString() };
+    }
   }
 }
+
+export type Params = {};
+
+export type ReturnedData = {};
