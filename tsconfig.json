@@ -24,6 +24,7 @@
     ".bearer/views/src/components.d.ts"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    "**/*flycheck*"
   ]
 }
