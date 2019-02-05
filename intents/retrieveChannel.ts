@@ -7,15 +7,7 @@ import {
 
 import Client from "./client";
 
-type TSlackChannelPayload = {
-  ok: boolean;
-  channel: {
-    id: string;
-    name: string;
-    is_private: boolean;
-    is_archived: boolean;
-  };
-};
+import { TChannel } from './ListChannel'
 
 export default class RetrieveChannelIntent extends FetchData
   implements FetchData<ReturnedData, any, TOAUTH2AuthContext> {
@@ -23,7 +15,7 @@ export default class RetrieveChannelIntent extends FetchData
     event: TFetchActionEvent<Params, TOAUTH2AuthContext>
   ): TFetchPromise<ReturnedData> {
     try {
-      const params = event.params.reference;
+      const params = event.context.reference;
       const { data: response } = await Client(
         event.context.authAccess.accessToken
       ).get("conversations.info", { params: { channel: params.id } });
@@ -45,10 +37,5 @@ export default class RetrieveChannelIntent extends FetchData
 }
 
 export type Params = {
-  reference: any;
 };
-export type ReturnedData = {
-  id: any;
-  name: any;
-  is_private: any;
-};
+export type ReturnedData = TChannel;

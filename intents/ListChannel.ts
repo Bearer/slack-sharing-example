@@ -6,15 +6,11 @@ import {
 } from "@bearer/intents";
 import Client from "./client";
 
-type TSlackChannelsPayload = {
-  ok: boolean;
-  channels: Array<{
-    id: string;
-    name: string;
-    is_private: boolean;
-    is_archived: boolean;
-  }>;
-};
+export type TChannel = {
+  id: string;
+  name: string;
+  is_private: boolean;
+}
 
 export default class ListChannelIntent extends FetchData
   implements FetchData<ReturnedData, any, TOAUTH2AuthContext> {
@@ -46,4 +42,7 @@ export default class ListChannelIntent extends FetchData
 
 export type Params = {};
 
-export type ReturnedData = {};
+export type ReturnedData = {
+  ok: boolean;
+  channels: TChannel[];
+}

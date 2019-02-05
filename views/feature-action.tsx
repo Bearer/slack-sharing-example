@@ -14,9 +14,6 @@ export class FeatureAction {
   fetcher: BearerFetch
 
   @Prop()
-  authId: string
-
-  @Prop()
   text: string = 'Share on slack'
 
   @Prop()
@@ -41,7 +38,6 @@ export class FeatureAction {
     this.loading = true
     this.error = false
     this.fetcher({
-      authId: this.authId,
       channelId: (this as any).channelRefId,
       body: { message: this.message }
     })
