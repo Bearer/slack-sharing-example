@@ -55,7 +55,7 @@ export class SetupAction {
 
     const { value: clientSecret } = e.detail.set.find(
       ({ controlName }: { controlName: string }) => {
-        return controlName === "clientID";
+        return controlName === "clientSecret";
       }
     );
 
